@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build (g++)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "group": { "kind": "build", "isDefault": true },
+            "presentation": { "reveal": "always" },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Build (MSVC)",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/EHsc",
+                "${file}",
+                "/Fe:${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always" },
+            "problemMatcher": []
+        }
+    ]
+}
